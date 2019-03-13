@@ -48,8 +48,9 @@ class App extends Component {
             <br/>
             <label>
             <input placeholder="URL Link to Image" type="text" value={this.state.valueImage} onChange={this.handleChangeImage} />
-            <input type="submit" value="Submit Post" />
+            <br/>
             </label>
+            <input type="submit" value="Submit Post" />
           </form>
 
           <div>
