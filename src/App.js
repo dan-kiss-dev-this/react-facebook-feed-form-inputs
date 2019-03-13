@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const post = (dataObject, Index) => <p key={Index}>{dataObject}</p>;
+const post = (dataObject, Index) => 
+  <div key={Index}>
+    <p>{dataObject.valueTitle}</p>
+    <img src={dataObject.valueImage} alt="Post pic"/>
+    
+  </div>;
 
 class App extends Component {
   constructor(props) {
@@ -27,13 +32,10 @@ class App extends Component {
   }
   
   async handleSubmit(event) {
-    // alert('A value was submitted: ' + this.state.value);
     event.preventDefault();
-    const postObject = { title: this.state.valueTitle, imageURL: this.state.valueImage };
-    // const postObject = new Object(this.state.valueTitle, this.state.valueImage,)
+    const postObject = { valueTitle: this.state.valueTitle, valueImage: this.state.valueImage };
     console.log(postObject);
-    await this.setState({ allValues: [...this.state.allValues, this.state.valueTitle] });
-    this.setState({ valueTitle: ""});
+    await this.setState({ allValues: [...this.state.allValues, postObject], valueTitle: "", valueImage: "" });
     console.log(this.state.allValues);
   }
 
@@ -59,18 +61,7 @@ class App extends Component {
             {this.state.allValues.map((singlePost, index) => post(singlePost, index))}
           </div>
 
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
+            
           </div>  
       </div>
     );
