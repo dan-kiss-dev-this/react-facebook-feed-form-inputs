@@ -1,3 +1,15 @@
+![Feed-Page](/public/facebook_feed.png?raw=true "feed_page")
+
+Technical Interview - Build a React App that allows the user to post pictures and a title along with the image like a social media feed. 
+
+	•	Use create-react-app
+	•	https://github.com/facebook/create-react-app
+	•	User should be able to enter a Image url
+	•	User should be able to enter a title with the image
+	•	When the user hits the submit button, the Feed should refresh and the new post should show up on the user feed.
+	•	Use css to make your social media feed app to look like the images below.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
