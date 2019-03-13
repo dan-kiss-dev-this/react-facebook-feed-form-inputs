@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const post = (dataObject, Index) => 
   <div key={Index} className='singlePost'>
     <h2>{dataObject.valueTitle}</h2>
-    <img src={dataObject.valueImage} alt="Post pic"/>
-    
+    <img src={dataObject.valueImage} alt="Post pic"/>    
   </div>;
 
 class App extends Component {
@@ -43,16 +41,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-
           <form onSubmit={this.handleSubmit}>
             <label>
-              Title of Image:
-            <input type="text" value={this.state.valueTitle} onChange={this.handleChangeTitle} />
+            <input placeholder="Title of Image" type="text" value={this.state.valueTitle} onChange={this.handleChangeTitle} />
             </label>
             <br/>
             <label>
-              URL Link to Image:
-            <input type="text" value={this.state.valueImage} onChange={this.handleChangeImage} />
+            <input placeholder="URL Link to Image" type="text" value={this.state.valueImage} onChange={this.handleChangeImage} />
             <input type="submit" value="Submit Post" />
             </label>
           </form>
@@ -60,8 +55,7 @@ class App extends Component {
           <div>
             {this.state.allValues.map((singlePost, index) => post(singlePost, index))}
           </div>
-
-            
+ 
           </div>  
       </div>
     );
