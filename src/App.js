@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 const post = (dataObject, Index) => 
-  <div key={Index}>
-    <p>{dataObject.valueTitle}</p>
+  <div key={Index} className='singlePost'>
+    <h2>{dataObject.valueTitle}</h2>
     <img src={dataObject.valueImage} alt="Post pic"/>
     
   </div>;
